@@ -8,13 +8,14 @@ img {
 }
 
 h1 {
-  color: black;
+  color: #e4e3d5;
   background-color: #4fc3f7;
 }
 
 h2 {
   color: #4fc3f7;
-  background-color: black;
+  background-color: #e1f5fe;
+  text-align: center;
 }
 
 h3 {
