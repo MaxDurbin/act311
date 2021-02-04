@@ -2,13 +2,17 @@
   padding: 100px;
 }
 
+primary {
+  color: #e4e3d5;
+}
+
 img {
   style: 150px;
   height: 150px;
 }
 
 h1 {
-  color: #e4e3d5;
+  color: black;
   background-color: #4fc3f7;
 }
 

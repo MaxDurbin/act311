@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,eAAe,CAAC;EACZ,OAAO,EAAE,KAAK;CAAG;;AAErB,AAAA,GAAG,CAAC;EACA,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;CAAG",
+    "sources": [
+        "Germany.sass"
+    ],
+    "names": [],
+    "file": "Germany.css"
+}
