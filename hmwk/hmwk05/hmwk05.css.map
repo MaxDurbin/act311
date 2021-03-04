@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,GAAG,CAAC;EACA,WAAW,EAAE,IAAI;EACjB,SAAS,EAAE,KAAK;CAAG;;AAEvB,AAAA,OAAO,CAAC;EACJ,YAAY,EAAE,IAAI;EAClB,aAAa,EAAE,IAAI;CAAG",
+    "sources": [
+        "hmwk05.sass"
+    ],
+    "names": [],
+    "file": "hmwk05.css"
+}

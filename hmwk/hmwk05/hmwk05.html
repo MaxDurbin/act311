@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="hmwk05.css">
+    <title>hmwk05</title>
+</head>
+
+<script src="hmwk05.js"></script>
+<body onload="load()">
+            
+    <h1 class="text-center">Dogs are Cool</h1>
+    <div class="row">
+        <span class="badge bg-secondary"> <h6>This page is hmwk05 for ACT-311-40</h6> </span>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="bg-light p-5 rounded-lg m-3">
+                <div class=container>
+                    <p>
+                        welcome to hmwk05 Fetching. I'll use these api's for the img src's and generated questions.
+                        <a href="https://dog.ceo">dog.ceo</a>
+                        <a href="https://nationalize.io/">nationalize.io</a>.
+                        I'll also demonstrate use of bootstrap grids and a few other components.
+                    </p>
+                </div>
+            </div>
+            <div class=container id="submap">
+                <p>On the right there is an image of a dog. It was retrieved using fetch. The answere Givin to the input that reads "enter a name" below should be displayed below the dog</p>
+                <br>
+                <p>Enter a name below to test the second process, where fetch is used to guess the origin of a name when one is provided.</p>
+                
+                <input id="enterName" class="form-control" type ="text" placeholder="enter a name" onclick="enterName()">
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class=container>
+                <img  id="dogpic">
+            </div>
+            <div class=container>
+                <h3 id="result"></h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
