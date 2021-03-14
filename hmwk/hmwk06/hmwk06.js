@@ -1,45 +1,39 @@
 
+let findCoursesDept = "";
 
-async function fetchCourseInfo(){
+async function fetchInstructorList(){
     let response = await fetch('csmp.json');
     let data = await response.json();
-    console.log(response);
-
+    
     let instructors = [];
-    let htmlthing = "";
-
+    let instructorsHTML = "";
     data.forEach((object) => {
-        //console.log(object.instructor);
-        //check to see if the instructor already exhists in the instructors array
-
         let duplicate = false;
+        instructors.sort();
         instructors.forEach((Inst) => {
-            //console.log(Inst);
             if(object.instructor == Inst){
-                //console.log("duplicate");
                 duplicate = true;
             }
         })
-        
         if(duplicate == false){
-            //console.log("not duplicate");
             instructors.push(object.instructor);
-            htmlthing += ("<option value='" + object.instructor + "'>"+ object.instructor+ "</option>");
-        
         }
     })
-    //console.log(instructors);
-    //console.log(htmlthing);
-    document.getElementById("Instructor").innerHTML = htmlthing;
+    instructors.forEach((instructor) => {
+        instructorsHTML += ("<option value='" + instructor + "'>"+ instructor + "</option>");
+    })
+    document.getElementById("Instructor").innerHTML = instructorsHTML;
 }
-
 
 async function findCourses(){
     //console.log(document.getElementById("Instructor").value);
-    let response = await fetch('csmp.json');
+    console.log(document.getElementById("dept").value)
+    let response = await fetch('https://raw.githubusercontent.com/noynaert/act311midterm/main/' + findCoursesDept);
     let data = await response.json();
+
     let courses = "";
     let tableInnerHtml = ""
+    
     data.forEach((object) => {
         if(object.instructor == document.getElementById("Instructor").value){
             courses += ("<li>"+object.course+"-"+object.sec+"</li>");
@@ -47,22 +41,68 @@ async function findCourses(){
         }
     })
     //console.log(courses);
-    document.getElementById("courseList").innerHTML = courses;
     document.getElementById("courseTable").innerHTML = tableInnerHtml;
 
 }
 
+async function fetchFiles(){
+    document.getElementById("invi").style.visibility = "hidden";
+    let response = await fetch('https://raw.githubusercontent.com/noynaert/act311midterm/main/all.json');
+    let data = await response.json();
+    let departments = "";
 
-
-
-
-/*
-function fetchCourseInfo(){
-    console.log("attempting fetch");
-    let url = "./csmp.json";
-    fetch(url)
-    .then(function(res){
-        console.log(res);
+    data.forEach((dept) => {
+        //console.log(dept.dept);
+        departments += "<option value='"+dept.dept+"'>"+dept.dept +"</option>";
+        //document.getElementById("dept").innerHTML = departments;
     })
+    document.getElementById("dept").innerHTML = departments;
 }
-*/
+
+async function allInstructors(){
+    document.getElementById("invi").style.visibility = "visible";
+    let response = await fetch('https://raw.githubusercontent.com/noynaert/act311midterm/main/all.json');
+    let data = await response.json();
+    let deptartment = "";
+    let Instructors = [];
+    let InstructorsInnerHTML = "";
+
+    data.forEach((dept) => {
+        //console.log(document.getElementById("dept").value);
+        //console.log(dept.dept);
+        if(document.getElementById("dept").value == dept.dept){
+            deptartment = dept.filename;
+        }
+    })
+    findCoursesDept = deptartment;
+
+    response = await fetch(('https://raw.githubusercontent.com/noynaert/act311midterm/main/' + deptartment));
+    data = await response.json();
+    data.forEach((course)=> {
+        let duplicate = true;
+        Instructors.forEach((instructor)=>{
+            //console.log(instructor);
+            //console.log(course.instructor);
+            if(instructor == course.instructor){
+                duplicate = false;
+            }
+        console.log(duplicate);
+        })
+        if(duplicate == true){
+            Instructors.push(course.instructor);
+        }
+    })
+    Instructors.sort()
+    Instructors.forEach((instructor) => {
+        InstructorsInnerHTML += "<option value='" + instructor + "'>"+ instructor + "</option>";
+    })
+    console.log(InstructorsInnerHTML);
+    document.getElementById("Instructor").innerHTML = InstructorsInnerHTML;
+}
+
+
+async function getJson(fileName){
+    let response = await fetch(fileName)
+    let data = await response.json();
+    return data;
+}

@@ -11,37 +11,37 @@
     <script src="hmwk06.js"></script>
 </head>
 
-
-<body onload="fetchCourseInfo()">
+<body onload="fetchInstructorList(); fetchFiles();">
     <div class="container">
         <div class="row">
             <span class="badge bg-secondary"> <h6>This page is hmwk06 for ACT-311-40</h6> </span>
         </div>
-
+        
         <div class="row">
             <div class="col-6">
+                <label for="dept">dept</label>
+
+                <select id="dept" onclick="allInstructors()"></select>
+                
+                <div id="invi">
                 <label for="Instructor">Instructor</label>
                 <select id="Instructor" onclick="findCourses()"></select>
-                <table id="courseTable">
-                    
-                </table>
-            </div>
+                </div>
 
-            <div class="col-4">
-                <ul id="courseList">
-                </ul>
+                <table id="courseTable"></table>
+            </div>
+            <div class="col-4" >
+                
+                   
             </div>
             <div class="col-2">
-                <h4>something</h4>
+                <h4>dog</h4>
+                <div id =dogodiv>
+                    <img id="dogo" src="dogo.jpg" alt="dogo">
+                </div>
             </div>
         </div>
-
-
-
-
-
-
-
     </div>
+    
 </body>
 </html>
