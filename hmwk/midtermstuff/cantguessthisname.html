@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaxDurbin_hmwk06</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="hmwk06.css">
+    <script src="hmwk06.js"></script>
+</head>
+
+<body onload="fetchInstructorList(); fetchFiles();">
+    <div class="container">
+        <div class="row">
+            <span class="badge bg-secondary"> <h6>This page is hmwk06 for ACT-311-40</h6> </span>
+        </div>
+        
+        <div class="row">
+            <div class="col-6">
+                <label for="dept">dept</label>
+
+                <select id="dept" onclick="allInstructors()"></select>
+                
+                <div id="invi">
+                <label for="Instructor">Instructor</label>
+                <select id="Instructor" onclick="findCourses()"></select>
+                </div>
+
+                <table id="courseTable"></table>
+            </div>
+            <div class="col-4" >
+                
+                   
+            </div>
+            <div class="col-2">
+                <h4>dog</h4>
+                <div id =dogodiv>
+                    <img id="dogo" src="dogo.jpg" alt="dogo">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
